@@ -33,7 +33,9 @@ pipeline {
             agent { dockerfile true }
             steps {
 
-                sh 'echo Hello'
+                def app
+
+                app = docker.build("buboal/helloworld")
 
             }
         }
