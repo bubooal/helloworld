@@ -26,9 +26,11 @@ pipeline {
             steps {
                 sh './jenkins/scripts/deliver.sh'
                 node('docker_image_node_label') {
+                    steps {
                         checkout scm
                         def customImage = docker.build("my-image:${env.BUILD_ID}")
                         customImage.push('latest')
+                        }
                 }
 
             }
