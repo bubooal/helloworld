@@ -31,6 +31,7 @@ pipeline {
         }
         stage('Deliver'){
             agent { dockerfile { additionalBuildArgs '--tag bubooal/helloworldspringboot'}}
+            steps {}
         }
     }
 }
