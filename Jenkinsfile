@@ -44,7 +44,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'docker version'
+                sh 'docker images'
             }
         }
     }
