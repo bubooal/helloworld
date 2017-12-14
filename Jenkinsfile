@@ -30,15 +30,7 @@ pipeline {
             }
         }
         stage('Deliver'){
-            agent { dockerfile true }
-            steps {
-
-                script {
-                    def app
-                    app = docker.build("buboal/helloworld")
-                }
-            
-            }
+            agent { dockerfile { additionalBuildArgs '--tag bubooal/helloworldspringboot'}}
         }
     }
 }
