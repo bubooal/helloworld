@@ -29,8 +29,20 @@ pipeline {
                 }
             }
         }
-        stage('Image Build'){
+
+        stage('Build Image'){
             agent { dockerfile { additionalBuildArgs '--tag bubooal/helloworldspringboot'}}
+            steps {
+                sh 'echo Image Build complete'
+            }
+        }
+
+        stage('Push Image'){
+            agent { 
+                docker{
+                    image 'docker'
+                }
+            }
             steps {
                 sh 'docker version'
             }
