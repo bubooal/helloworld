@@ -44,7 +44,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'docker images'
+                sh 'docker login -u bubooal -p Filiberto123'
+                sh 'docker push bubooal/helloworldspringboot'
             }
         }
     }
