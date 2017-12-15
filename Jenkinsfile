@@ -49,15 +49,5 @@ pipeline {
             }
         }
 
-        stage('Deploy Image'){
-            agent { 
-                docker{
-                    image 'docker'
-                }
-            }
-            steps {
-                sh 'docker run -p 8081:8081 -d bubooal/helloworldspringboot'
-            }
-        }
     }
 }
